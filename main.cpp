@@ -49,8 +49,7 @@ Bullet bullets[MAX_BULLETS];
 Enemy enemies[MAX_ENEMIES];
 Player player;
 
-uint8_t player_bullet_speed;
-
+// button states (whether they are pressed or not)
 boolean upbtn = false,
         dnbtn = false,
         lfbtn = false,
@@ -74,22 +73,18 @@ void initPlayer(){
  */
 void createBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed){
     
-    // horribly inefficient way to insert a new bullet into the array
+    // not terribly efficient way to find an inactive bullet
     int8_t i = 0;
     while(bullets[i].age != 0 && i < MAX_BULLETS-1){
         i++;
     }
     
-    Bullet newBullet;
-    // initilaize
-    newBullet.x = x;
-    newBullet.y = y;
-    newBullet.age = 1;
-    newBullet.direction = dir;
-    newBullet.speed = speed;
-    
-    //add to bullet array
-    bullets[i] = newBullet;
+    // initialise
+    bullets[i].x = x;
+    bullets[i].y = y;
+    bullets[i].age = 1;
+    bullets[i].direction = dir;
+    bullets[i].speed = speed;
 }
 
 
@@ -231,8 +226,7 @@ void loop() {
         if(player.last_bullet_time > 5){
             if(abtn){
                 if(player.abilities == 0){
-                    //gb.display.drawRect(0,0,3,3);
-                    createBullet(player.x + 4, player.y, DIR_E, player.bullet_speed);
+                    createBullet(player.x + 1, player.y, DIR_E, player.bullet_speed);
                     player.last_bullet_time = 0;
                 }
             }
