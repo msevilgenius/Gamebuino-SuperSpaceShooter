@@ -11,7 +11,6 @@
 #include <Gamebuino.h>
 #include "globals.h"
 
-
 class Bullet {
 public:
     Bullet();
@@ -25,7 +24,6 @@ private:
     int8_t speed;
     DIRECTION direction;
     uint8_t age;
-
 };
 
 #endif	/* BULLET_H */

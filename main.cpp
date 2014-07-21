@@ -4,8 +4,6 @@
 #include "Bullets.h"
 #include "globals.h"
 
-enum ENEMY_TYPE {};
-
 Gamebuino gb;
 
 typedef struct{
@@ -20,12 +18,11 @@ Player player;
 Bullets bullets;
 
 // button states (whether they are pressed or not)
-boolean upbtn = false,
+bool upbtn = false,
         dnbtn = false,
         lfbtn = false,
         rtbtn = false,
         abtn  = false;
-
 
 /**
  * updates the status of the buttons
@@ -88,7 +85,6 @@ void loop() {
         if(abtn){
             player.shoot();
         }
-        
         
         //rendering
         bullets.updateAndDraw();

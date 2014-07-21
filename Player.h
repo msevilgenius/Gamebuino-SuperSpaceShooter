@@ -28,7 +28,6 @@ private:
     int8_t bullet_speed;
     int8_t last_bullet_time;
     byte abilities;
-
 };
 
 #endif	/* PLAYER_H */

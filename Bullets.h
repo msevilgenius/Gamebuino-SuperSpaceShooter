@@ -19,7 +19,6 @@ public:
     virtual ~Bullets();
     void createBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed);
     void updateAndDraw();
-
 };
 
 #endif	/* BULLETS_H */

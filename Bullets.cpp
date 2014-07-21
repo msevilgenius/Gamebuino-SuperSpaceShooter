@@ -22,6 +22,7 @@ void Bullets::createBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed){
     Bullet newBullet(x, y, dir, speed);
     bullets[i] = newBullet;
 }
+
 void Bullets::updateAndDraw(){
     for(int8_t i = 0;i < MAX_BULLETS;i++){
         if (!bullets[i].isDead()){

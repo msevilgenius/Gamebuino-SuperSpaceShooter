@@ -32,7 +32,7 @@ Bullet::~Bullet() {
 void Bullet::update(){
     // Note: age = 0 means that the bullet doesn't 'exist' so it can be overwritten, it's a dirty hack
     
-    // bullet doesn't exist so skip to the next one
+    // bullet doesn't exist so do nothing
     if(age == 0){
         return;
     }
@@ -51,7 +51,7 @@ void Bullet::update(){
     }
 
     /*
-     *  move and draw
+     * move and draw
      * combined becuase move direction and the direction of the draw line
      * are the same it makes sense to do them at the same time,
      * rather than have this switch statement run twice
@@ -60,35 +60,39 @@ void Bullet::update(){
     switch (direction) {
         case DIR_N:
             y -= speed;
-            gb.display.drawFastVLine(x,y, BULLET_SIZE);
+            gb.display.drawFastVLine(x, y, BULLET_SIZE);
             break;
         case DIR_NE:
             y -= speed;
             x += speed;
+            gb.display.drawLine(x, y, x+BULLET_SIZE/2, y+BULLET_SIZE);
             break;
         case DIR_E:
             x += speed;
-            gb.display.drawFastHLine(x,y, BULLET_SIZE);
+            gb.display.drawFastHLine(x, y, BULLET_SIZE);
             break;
         case DIR_SE:
             y += speed;
             x += speed;
+            gb.display.drawLine(x, y, x+BULLET_SIZE/2, y-BULLET_SIZE);
             break;
         case DIR_S:
             y += speed;
-            gb.display.drawFastVLine(x,y, -BULLET_SIZE);
+            gb.display.drawFastVLine(x, y, -BULLET_SIZE);
             break;
         case DIR_SW:
             y += speed;
             x -= speed;
+            gb.display.drawLine(x, y, x-BULLET_SIZE/2, y-BULLET_SIZE);
             break;
         case DIR_W:
             x -= speed;
-            gb.display.drawFastHLine(x,y, -BULLET_SIZE);
+            gb.display.drawFastHLine(x, y, -BULLET_SIZE);
             break;
         case DIR_NW:
             y -= speed;
             x -= speed;
+            gb.display.drawLine(x, y, x-BULLET_SIZE/2, y+BULLET_SIZE);
             break;
     }
 }
