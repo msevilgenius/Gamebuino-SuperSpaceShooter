@@ -34,17 +34,16 @@ Player::~Player() {
 
 void Player::draw(){
     gb.display.drawBitmap(x-5, y-3, SHIP_SPRITE);
+    last_bullet_time++; //piggy backing on a function executed every frame
 }
 
 void Player::shoot(){
     if(last_bullet_time > 5){
-            if(abilities == 0){
-                bullets.createBullet(x + 1, y, DIR_E, bullet_speed);
-                last_bullet_time = 0;
-            }
-        }else{
-            last_bullet_time++;
+        if(abilities == 0){
+            bullets.createBullet(x + 1, y, DIR_E, bullet_speed);
+            last_bullet_time = 0;
         }
+    }
 }
 
 void Player::moveUp(){
