@@ -1,0 +1,11 @@
+Bullet collisions - hit boxes (for the player at least) should be smaller than the player sprite e.g. 3x3 in the middle (most solid part) of the sprite
+Proper enemy spawning
+Score
+More enemy types
+Store player and enemy bullets in separate arrays for easier collision checking
+Make it pause-able
+Variable difficulty (bullet hell mode?)
+	AND/OR:
+Multiple 'pre-determined' levels (enemies are always in the same pattern in each specific level)
+	-this could be achieved by using the same random seed each time a particular level is played
+Power-ups and abilities? e.g shield, more bullets in multiple directions, etc.

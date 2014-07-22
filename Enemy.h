@@ -9,14 +9,18 @@
 #define	ENEMY_H
 
 #include "Globals.h"
+#include "BulletManager.h"
 #include <Gamebuino.h>
 
 class Enemy {
 public:
     Enemy();
-    Enemy(int8_t x, int8_t y);
+    Enemy(int8_t x, int8_t y, ENEMY_TYPE type);
     Enemy(const Enemy& orig);
     virtual ~Enemy();
+    void draw();
+    void update();
+    boolean isDead();
 private:
     int8_t x;
     int8_t y;

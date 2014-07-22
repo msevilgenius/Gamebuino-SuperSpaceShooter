@@ -1,4 +1,5 @@
-build/Debug/Arduino-Windows/Bullets.o: Bullets.cpp Bullets.h Bullet.h \
+build/Debug/Arduino-Windows/BulletManager.o: BulletManager.cpp \
+  BulletManager.h Bullet.h \
   C:/ProgramData/arduino-1.0.5-r2/libraries/Gamebuino/Gamebuino.h \
   C:/ProgramData/arduino-1.0.5-r2/hardware/arduino/cores/arduino/Arduino.h \
   C:/ProgramData/arduino-1.0.5-r2/hardware/arduino/cores/arduino/binary.h \
@@ -18,7 +19,7 @@ build/Debug/Arduino-Windows/Bullets.o: Bullets.cpp Bullets.h Bullet.h \
   C:/ProgramData/arduino-1.0.5-r2/libraries/Gamebuino/Battery.h \
   C:/ProgramData/arduino-1.0.5-r2/libraries/Gamebuino/Sound.h globals.h
 
-Bullets.h:
+BulletManager.h:
 
 Bullet.h:
 

@@ -34,6 +34,8 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>EnemyManager.cpp</itemPath>
+    <itemPath>EnemyManager.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -72,6 +74,10 @@
       <item path="Enemy.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Enemy.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EnemyManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EnemyManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -113,6 +119,10 @@
       <item path="Enemy.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Enemy.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EnemyManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EnemyManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Player.cpp" ex="false" tool="1" flavor2="0">
       </item>

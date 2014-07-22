@@ -1,16 +1,15 @@
 #include <SPI.h>
 #include <Gamebuino.h>
 #include "Player.h"
-#include "Enemy.h"
+#include "EnemyManager.h"
 #include "BulletManager.h"
 #include "globals.h"
 
 Gamebuino gb;
 
-Enemy enemies[MAX_ENEMIES];
-
 Player player;
 BulletManager bullets;
+EnemyManager enemies;
 
 // button states (whether they are pressed or not)
 bool upbtn = false,
@@ -56,6 +55,8 @@ void updateButtons(){
 void setup() {
     gb.begin();
     gb.titleScreen(F("side scroller"));
+    gb.pickRandomSeed();
+    gb.battery.show = false;
 }
 
 void loop() {
@@ -80,7 +81,13 @@ void loop() {
             player.shoot();
         }
         
+        //temporary way to create enemies for testing
+        if(gb.buttons.pressed(BTN_B)){
+            enemies.createEnemy(LCDWIDTH+3, random(3, LCDHEIGHT-3), BASIC);
+        }
+        
         //rendering
+        enemies.update();
         bullets.updateAndDraw();
         player.draw();
     }

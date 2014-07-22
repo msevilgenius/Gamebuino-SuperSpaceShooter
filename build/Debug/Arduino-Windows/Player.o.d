@@ -16,8 +16,8 @@ build/Debug/Arduino-Windows/Player.o: Player.cpp Player.h \
   C:/ProgramData/arduino-1.0.5-r2/libraries/SPI/SPI.h \
   C:/ProgramData/arduino-1.0.5-r2/libraries/Gamebuino/Buttons.h \
   C:/ProgramData/arduino-1.0.5-r2/libraries/Gamebuino/Battery.h \
-  C:/ProgramData/arduino-1.0.5-r2/libraries/Gamebuino/Sound.h Bullets.h \
-  Bullet.h globals.h
+  C:/ProgramData/arduino-1.0.5-r2/libraries/Gamebuino/Sound.h \
+  BulletManager.h Bullet.h globals.h
 
 Player.h:
 
@@ -57,7 +57,7 @@ C:/ProgramData/arduino-1.0.5-r2/libraries/Gamebuino/Battery.h:
 
 C:/ProgramData/arduino-1.0.5-r2/libraries/Gamebuino/Sound.h:
 
-Bullets.h:
+BulletManager.h:
 
 Bullet.h:
 

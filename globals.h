@@ -9,7 +9,7 @@
 #define	GLOBALS_H
 
 enum DIRECTION {DIR_N, DIR_NE, DIR_E, DIR_SE, DIR_S, DIR_SW, DIR_W, DIR_NW};
-enum ENEMY_TYPE {};
+enum ENEMY_TYPE {DEAD, BASIC};
     
 #define MAX_BULLETS 50
 #define BULLET_SIZE 3

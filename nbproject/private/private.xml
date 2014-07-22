@@ -7,13 +7,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/F:/Documents/Arduino/GB/side%20scroller/BulletManager.h</file>
             <file>file:/F:/Documents/Arduino/GB/side%20scroller/Bullet.cpp</file>
+            <file>file:/F:/Documents/Arduino/GB/side%20scroller/Enemy.h</file>
             <file>file:/F:/Documents/Arduino/GB/side%20scroller/Player.h</file>
             <file>file:/F:/Documents/Arduino/GB/side%20scroller/globals.h</file>
-            <file>file:/F:/Documents/Arduino/GB/side%20scroller/Bullets.h</file>
+            <file>file:/F:/Documents/Arduino/GB/side%20scroller/Enemy.cpp</file>
             <file>file:/F:/Documents/Arduino/GB/side%20scroller/Bullet.h</file>
             <file>file:/F:/Documents/Arduino/GB/side%20scroller/Player.cpp</file>
-            <file>file:/F:/Documents/Arduino/GB/side%20scroller/Bullets.cpp</file>
+            <file>file:/F:/Documents/Arduino/GB/side%20scroller/BulletManager.cpp</file>
             <file>file:/F:/Documents/Arduino/GB/side%20scroller/main.cpp</file>
         </group>
     </open-files>

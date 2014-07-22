@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Bullet.o \
 	${OBJECTDIR}/BulletManager.o \
 	${OBJECTDIR}/Enemy.o \
+	${OBJECTDIR}/EnemyManager.o \
 	${OBJECTDIR}/Player.o \
 	${OBJECTDIR}/main.o
 
@@ -80,6 +81,11 @@ ${OBJECTDIR}/Enemy.o: Enemy.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Enemy.o Enemy.cpp
+
+${OBJECTDIR}/EnemyManager.o: EnemyManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/EnemyManager.o EnemyManager.cpp
 
 ${OBJECTDIR}/Player.o: Player.cpp 
 	${MKDIR} -p ${OBJECTDIR}
