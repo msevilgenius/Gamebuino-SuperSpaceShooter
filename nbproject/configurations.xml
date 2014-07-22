@@ -7,6 +7,7 @@
       <itemPath>Bullet.h</itemPath>
       <itemPath>BulletManager.h</itemPath>
       <itemPath>Enemy.h</itemPath>
+      <itemPath>EnemyManager.h</itemPath>
       <itemPath>Player.h</itemPath>
       <itemPath>globals.h</itemPath>
     </logicalFolder>
@@ -20,6 +21,7 @@
       <itemPath>Bullet.cpp</itemPath>
       <itemPath>BulletManager.cpp</itemPath>
       <itemPath>Enemy.cpp</itemPath>
+      <itemPath>EnemyManager.cpp</itemPath>
       <itemPath>Player.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -34,8 +36,6 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>EnemyManager.cpp</itemPath>
-    <itemPath>EnemyManager.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

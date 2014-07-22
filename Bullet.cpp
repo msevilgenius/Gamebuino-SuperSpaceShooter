@@ -63,36 +63,44 @@ void Bullet::update(){
             gb.display.drawFastVLine(x, y, BULLET_SIZE);
             break;
         case DIR_NE:
-            y -= speed;
-            x += speed;
-            gb.display.drawLine(x, y, x+BULLET_SIZE/2, y+BULLET_SIZE);
+            if(gb.frameCount%3){
+                y -= speed;
+                x += speed;
+            }
+            gb.display.drawLine(x, y, x+DIAG_BULLET_SIZE, y+DIAG_BULLET_SIZE);
             break;
         case DIR_E:
             x += speed;
             gb.display.drawFastHLine(x, y, BULLET_SIZE);
             break;
         case DIR_SE:
-            y += speed;
-            x += speed;
-            gb.display.drawLine(x, y, x+BULLET_SIZE/2, y-BULLET_SIZE);
+            if(gb.frameCount%3){
+                y += speed;
+                x += speed;
+            }
+            gb.display.drawLine(x, y, x+DIAG_BULLET_SIZE, y-DIAG_BULLET_SIZE);
             break;
         case DIR_S:
             y += speed;
             gb.display.drawFastVLine(x, y-BULLET_SIZE, BULLET_SIZE);
             break;
         case DIR_SW:
-            y += speed;
-            x -= speed;
-            gb.display.drawLine(x, y, x-BULLET_SIZE/2, y+BULLET_SIZE);
+            if(gb.frameCount%3){
+                y += speed;
+                x -= speed;
+            }
+            gb.display.drawLine(x, y, x-DIAG_BULLET_SIZE, y+DIAG_BULLET_SIZE);
             break;
         case DIR_W:
             x -= speed;
             gb.display.drawFastHLine(x-BULLET_SIZE, y, BULLET_SIZE);
             break;
         case DIR_NW:
-            y -= speed;
-            x -= speed;
-            gb.display.drawLine(x, y, x-BULLET_SIZE/2, y-BULLET_SIZE);
+            if(gb.frameCount%3){
+                y -= speed;
+                x -= speed;
+            }
+            gb.display.drawLine(x, y, x-DIAG_BULLET_SIZE, y-DIAG_BULLET_SIZE);
             break;
     }
 }

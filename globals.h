@@ -13,6 +13,7 @@ enum ENEMY_TYPE {DEAD, BASIC};
     
 #define MAX_BULLETS 50
 #define BULLET_SIZE 3
+#define DIAG_BULLET_SIZE 2
 #define MAX_ENEMIES 10
 
 #endif	/* GLOBALS_H */

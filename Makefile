@@ -16,8 +16,9 @@ LIB_LIBS_DIR = lib/libs
 ARDUINO_LIB_CORE = ${LIB_CORE_DIR}/arduinocore.a
 ARDUINO_LIB_LIBS = ${LIB_LIBS_DIR}/arduinolibs.a
 
-# Arduino Uno:
+# Gamebuino:
 ARDUINO_MODEL = atmega328p
+GAMEBUINO_MODEL = gamebuino
 ARDUINO_PROGRAMMER = arduino
 ARDUINO_PINS_DIR = ${ARDUINO_BASE_DIR}/hardware/arduino/variants/standard
 
@@ -30,7 +31,7 @@ ARDUINO_PINS_DIR = ${ARDUINO_BASE_DIR}/hardware/arduino/variants/standard
 #BAUD_RATE = 57600
 
 # Include the libraries that you want. This are subfolders of "arduino-1.0.4/libraries" folder:
-INCLUDE_LIBS=EEPROM;Gamebuino;SPI;
+INCLUDE_LIBS=Gamebuino;SPI;
 #INCLUDE_LIBS=EEPROM;Esplora;Ethernet;Ethernet/utility;Firmata;GSMSHIELD;\
 LiquidCrystal;MemoryFree;RTClib;SD;SD/utility;Servo;SoftwareSerial;SPI;\
 Stepper;WiFi;WiFi/utility;Wire;Wire/utility;\
@@ -104,11 +105,11 @@ ${LIB_LIBS_DIR}/%.c.o: ${ARDUINO_LIB_DIR}/%.c
 	
 .build-post: .build-impl	
 	avr-objcopy -O ihex ${CND_ARTIFACT_PATH_${CONF}} ${CND_ARTIFACT_PATH_${CONF}}.hex
-	avr-size --mcu=${ARDUINO_MODEL} -C ${CND_ARTIFACT_PATH_${CONF}}
+	avr-size --mcu=${GAMEBUINO_MODEL} -C ${CND_ARTIFACT_PATH_${CONF}}
 
 #upload: .build-post
 upload: 
-	${AVR_DUDE} -v -p${ARDUINO_MODEL} -c${ARDUINO_PROGRAMMER} -P ${COM_PORT} -b${BAUD_RATE} -D -Uflash:w:${CND_ARTIFACT_PATH_${CONF}}.hex:i
+	${AVR_DUDE} -v -p${GAMEBUINO_MODEL} -c${ARDUINO_PROGRAMMER} -P ${COM_PORT} -b${BAUD_RATE} -D -Uflash:w:${CND_ARTIFACT_PATH_${CONF}}.hex:i
 
 
 # clean
