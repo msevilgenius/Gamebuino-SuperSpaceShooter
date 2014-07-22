@@ -2,7 +2,7 @@
 #include <Gamebuino.h>
 #include "Player.h"
 #include "Enemy.h"
-#include "Bullets.h"
+#include "BulletManager.h"
 #include "globals.h"
 
 Gamebuino gb;
@@ -10,7 +10,7 @@ Gamebuino gb;
 Enemy enemies[MAX_ENEMIES];
 
 Player player;
-Bullets bullets;
+BulletManager bullets;
 
 // button states (whether they are pressed or not)
 bool upbtn = false,
@@ -67,7 +67,6 @@ void loop() {
         }
         if(dnbtn){
             player.moveDown();
-            
         }
         if(lfbtn){
             player.moveLeft();

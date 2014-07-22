@@ -8,7 +8,7 @@
 #include "Player.h"
 
 extern Gamebuino gb;
-extern Bullets bullets;
+extern BulletManager bullets;
 
 const byte SHIP_SPRITE[] PROGMEM = {
     7, 7,

@@ -5,15 +5,15 @@
  * Created on 21 July 2014, 20:09
  */
 
-#include "Bullets.h"
+#include "BulletManager.h"
 
-Bullets::Bullets() {
+BulletManager::BulletManager() {
 }
 
-Bullets::~Bullets() {
+BulletManager::~BulletManager() {
 }
 
-void Bullets::createBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed){
+void BulletManager::createBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed){
     // not terribly efficient way to find an inactive bullet
     int8_t i = 0;
     while(!bullets[i].isDead() && i < MAX_BULLETS-1){
@@ -23,7 +23,7 @@ void Bullets::createBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed){
     bullets[i] = newBullet;
 }
 
-void Bullets::updateAndDraw(){
+void BulletManager::updateAndDraw(){
     for(int8_t i = 0;i < MAX_BULLETS;i++){
         if (!bullets[i].isDead()){
             bullets[i].update();

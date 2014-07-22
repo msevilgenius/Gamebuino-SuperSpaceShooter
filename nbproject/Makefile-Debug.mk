@@ -36,7 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Bullet.o \
-	${OBJECTDIR}/Bullets.o \
+	${OBJECTDIR}/BulletManager.o \
 	${OBJECTDIR}/Enemy.o \
 	${OBJECTDIR}/Player.o \
 	${OBJECTDIR}/main.o
@@ -71,10 +71,10 @@ ${OBJECTDIR}/Bullet.o: Bullet.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I${INCLUDE} -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Bullet.o Bullet.cpp
 
-${OBJECTDIR}/Bullets.o: Bullets.cpp 
+${OBJECTDIR}/BulletManager.o: BulletManager.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I${INCLUDE} -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Bullets.o Bullets.cpp
+	$(COMPILE.cc) -g -I${INCLUDE} -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BulletManager.o BulletManager.cpp
 
 ${OBJECTDIR}/Enemy.o: Enemy.cpp 
 	${MKDIR} -p ${OBJECTDIR}

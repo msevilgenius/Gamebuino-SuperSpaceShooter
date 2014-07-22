@@ -9,7 +9,7 @@
 #define	PLAYER_H
 
 #include <Gamebuino.h>
-#include "Bullets.h"
+#include "BulletManager.h"
 #include "globals.h"
 
 class Player {

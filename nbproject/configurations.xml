@@ -5,7 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>Bullet.h</itemPath>
-      <itemPath>Bullets.h</itemPath>
+      <itemPath>BulletManager.h</itemPath>
       <itemPath>Enemy.h</itemPath>
       <itemPath>Player.h</itemPath>
       <itemPath>globals.h</itemPath>
@@ -18,7 +18,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Bullet.cpp</itemPath>
-      <itemPath>Bullets.cpp</itemPath>
+      <itemPath>BulletManager.cpp</itemPath>
       <itemPath>Enemy.cpp</itemPath>
       <itemPath>Player.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -65,9 +65,9 @@
       </item>
       <item path="Bullet.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Bullets.cpp" ex="false" tool="1" flavor2="0">
+      <item path="BulletManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Bullets.h" ex="false" tool="3" flavor2="0">
+      <item path="BulletManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Enemy.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -106,9 +106,9 @@
       </item>
       <item path="Bullet.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Bullets.cpp" ex="false" tool="1" flavor2="0">
+      <item path="BulletManager.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Bullets.h" ex="false" tool="3" flavor2="0">
+      <item path="BulletManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Enemy.cpp" ex="false" tool="1" flavor2="0">
       </item>
