@@ -1,4 +1,6 @@
-Bullet collisions - hit boxes (for the player at least) should be smaller than the player sprite e.g. 3x3 in the middle (most solid part) of the sprite
+Bullet collisions 
+	- hit boxes (for the player at least) should be smaller than the player sprite e.g. 3x3 in the middle (most solid part) of the sprite
+	- this is a common mechanic in this type of game, also because of the gamebuino's screen making bullets and ship moving sprites look smaller than they are
 Proper enemy spawning
 Score
 More enemy types
@@ -9,3 +11,5 @@ Variable difficulty (bullet hell mode?)
 Multiple 'pre-determined' levels (enemies are always in the same pattern in each specific level)
 	-this could be achieved by using the same random seed each time a particular level is played
 Power-ups and abilities? e.g shield, more bullets in multiple directions, etc.
+Better system for finding empty space in array for new enemies and bullets
+make enums for enemy type and directions into #define (maybe)
