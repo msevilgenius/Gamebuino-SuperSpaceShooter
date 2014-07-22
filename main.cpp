@@ -77,7 +77,7 @@ void loop() {
         }
         
         //player shooting
-        if(abtn){
+        if(abtn||gb.buttons.pressed(BTN_A)){
             player.shoot();
         }
         
