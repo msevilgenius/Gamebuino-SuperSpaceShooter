@@ -1,16 +1,11 @@
 #include <SPI.h>
 #include <Gamebuino.h>
 #include "Player.h"
+#include "Enemy.h"
 #include "Bullets.h"
 #include "globals.h"
 
 Gamebuino gb;
-
-typedef struct{
-    int8_t x;
-    int8_t y;
-    ENEMY_TYPE type;
-}Enemy;
 
 Enemy enemies[MAX_ENEMIES];
 

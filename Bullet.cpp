@@ -39,12 +39,12 @@ void Bullet::update(){
 
     // increment age
     age++;
-    //'destroy' too old bullets
+    // 'destroy' too old bullets
     if (age > 200){
         age = 0;
         return;
     }
-    //'destroy' bullets off screen
+    // 'destroy' bullets off screen
     if(x < 0 || x > LCDWIDTH ||y < 0 || y > LCDHEIGHT){
         age = 0;
         return;
