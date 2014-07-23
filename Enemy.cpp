@@ -50,9 +50,9 @@ void Enemy::update(){
         return;
     }
     if(gb.frameCount%16==0){
-        bullets.createBullet(x-4, y, DIR_W, 2);
-        bullets.createBullet(x-3, y-3, DIR_NW, 2);
-        bullets.createBullet(x-3, y+3, DIR_SW, 2);
+        bullets.enemyCreateBullet(x-4, y, DIR_W, 2);
+        bullets.enemyCreateBullet(x-3, y-3, DIR_NW, 2);
+        bullets.enemyCreateBullet(x-3, y+3, DIR_SW, 2);
     }
 }
 

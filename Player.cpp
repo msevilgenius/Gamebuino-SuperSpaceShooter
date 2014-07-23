@@ -40,7 +40,7 @@ void Player::draw(){
 void Player::shoot(){
     if(last_bullet_time > 5){
         if(abilities == 0){
-            bullets.createBullet(x + 1, y, DIR_E, bullet_speed);
+            bullets.playerCreateBullet(x + 1, y, DIR_E, bullet_speed);
             last_bullet_time = 0;
         }
     }
