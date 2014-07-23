@@ -1,5 +1,6 @@
 Bullet collisions 
 	- hit boxes (for the player at least) should be smaller than the player sprite e.g. 3x3 in the middle (most solid part) of the sprite
+        - need a Player::getCollisionBox() accessed by bullets, this allows for player abilities to change the hitbox
 	- this is a common mechanic in this type of game, also because of the gamebuino's screen making bullets and ship moving sprites look smaller than they are
 Proper enemy spawning
 Score
