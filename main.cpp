@@ -86,7 +86,7 @@ void updateButtons(){
 
 void setup() {
     gb.begin();
-    gb.titleScreen(F("side scroller"), logo);
+    gb.titleScreen(F(" SSS by msevilgenius"), logo);
     gb.pickRandomSeed();
     gb.battery.show = false;
 }
