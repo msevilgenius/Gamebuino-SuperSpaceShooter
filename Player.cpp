@@ -34,7 +34,7 @@ Player::~Player(){
 }
 
 void Player::draw(){
-    last_bullet_time++; //piggy backing on a function executed every frame
+    if (last_bullet_time < 200)last_bullet_time++; //piggy backing on a function executed every frame
     gb.display.drawBitmap(x-5, y-3, SHIP_SPRITE);
 }
 
