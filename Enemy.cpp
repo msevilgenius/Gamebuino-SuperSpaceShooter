@@ -50,12 +50,22 @@ void Enemy::update(){
         return;
     }
     if(gb.frameCount%16==0){
-        bullets.enemyCreateBullet(x-4, y, DIR_W, 2);
-        bullets.enemyCreateBullet(x-3, y-3, DIR_NW, 2);
-        bullets.enemyCreateBullet(x-3, y+3, DIR_SW, 2);
+        bullets.enemyCreateBullet(x, y, DIR_W, 2);
+        bullets.enemyCreateBullet(x, y, DIR_NW, 2);
+        bullets.enemyCreateBullet(x, y, DIR_SW, 2);
     }
 }
 
 boolean Enemy::isDead(){
     return type == DEAD;
+}
+
+
+HitBox Enemy::getCollisionBox(){
+    HitBox hb;
+    hb.x = x-3;
+    hb.y = y-2;
+    hb.w = 7;
+    hb.h = 5;
+    return hb;
 }

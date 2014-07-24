@@ -22,6 +22,7 @@ public:
     void moveLeft();
     void moveRight();
     void draw();
+    HitBox getCollisionBox();
 private:
     int8_t x;
     int8_t y;

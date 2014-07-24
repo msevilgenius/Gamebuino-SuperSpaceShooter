@@ -86,7 +86,7 @@ void loop() {
             enemies.createEnemy(LCDWIDTH+3, random(3, LCDHEIGHT-3), BASIC);
         }
         
-        //rendering
+        // updating and rendering
         enemies.update();
         bullets.updateAndDraw();
         player.draw();

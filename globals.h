@@ -10,6 +10,13 @@
 
 enum DIRECTION {DIR_N, DIR_NE, DIR_E, DIR_SE, DIR_S, DIR_SW, DIR_W, DIR_NW};
 enum ENEMY_TYPE {DEAD, BASIC};
+
+typedef struct HitBox{
+    int8_t x;
+    int8_t y;
+    int8_t w;
+    int8_t h;
+};
     
 #define MAX_PLAYER_BULLETS 25
 #define MAX_ENEMY_BULLETS 70

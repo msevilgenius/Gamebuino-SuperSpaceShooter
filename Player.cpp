@@ -29,16 +29,13 @@ Player::Player() {
     last_bullet_time = 5;
 }
 
-Player::~Player() {
-}
-
 void Player::draw(){
     gb.display.drawBitmap(x-5, y-3, SHIP_SPRITE);
     last_bullet_time++; //piggy backing on a function executed every frame
 }
 
 void Player::shoot(){
-    if(last_bullet_time > 5){
+    if(last_bullet_time > 5){// don't let the player shoot too often
         if(abilities == 0){
             bullets.playerCreateBullet(x + 1, y, DIR_E, bullet_speed);
             last_bullet_time = 0;
@@ -70,3 +67,11 @@ void Player::moveRight(){
     }
 }
 
+HitBox Player::getCollisionBox(){
+    HitBox hb;
+    hb.x = x-1;
+    hb.y = y-1;
+    hb.w = 3;
+    hb.h = 3;
+    return hb;
+}

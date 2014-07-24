@@ -21,6 +21,7 @@ public:
     void draw();
     void update();
     boolean isDead();
+    HitBox getCollisionBox();
 private:
     int8_t x;
     int8_t y;
