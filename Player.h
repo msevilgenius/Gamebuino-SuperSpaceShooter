@@ -28,7 +28,7 @@ private:
     int8_t x;
     int8_t y;
     int8_t bullet_speed;
-    int8_t last_bullet_time;
+    uint8_t last_bullet_time;
     byte abilities;
 };
 
