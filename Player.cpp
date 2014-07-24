@@ -29,9 +29,13 @@ Player::Player() {
     last_bullet_time = 5;
 }
 
+Player::~Player(){
+    
+}
+
 void Player::draw(){
-    gb.display.drawBitmap(x-5, y-3, SHIP_SPRITE);
     last_bullet_time++; //piggy backing on a function executed every frame
+    gb.display.drawBitmap(x-5, y-3, SHIP_SPRITE);
 }
 
 void Player::shoot(){
@@ -69,9 +73,14 @@ void Player::moveRight(){
 
 HitBox Player::getCollisionBox(){
     HitBox hb;
-    hb.x = x-1;
+    hb.x = x-2;
     hb.y = y-1;
     hb.w = 3;
     hb.h = 3;
     return hb;
+}
+
+// called when player is hit by bullet
+void Player::hit(){
+    
 }

@@ -45,6 +45,7 @@ void Enemy::draw(){
 
 void Enemy::update(){
     x--;
+    if(type == DEAD)return;
     if(x<-2){
         type = DEAD;
         return;
@@ -63,9 +64,13 @@ boolean Enemy::isDead(){
 
 HitBox Enemy::getCollisionBox(){
     HitBox hb;
-    hb.x = x-3;
-    hb.y = y-2;
+    hb.x = this->x-3;
+    hb.y = this->y-2;
     hb.w = 7;
     hb.h = 5;
     return hb;
+}
+
+void Enemy::hit(){
+    type = DEAD;
 }

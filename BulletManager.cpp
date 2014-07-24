@@ -19,7 +19,7 @@ void BulletManager::enemyCreateBullet(int8_t x, int8_t y, DIRECTION dir, int8_t 
     while(!enemyBullets[i].isDead() && i < MAX_ENEMY_BULLETS-1){
         i++;
     }
-    Bullet newBullet(x, y, dir, speed);
+    Bullet newBullet(x, y, dir, speed, SRC_ENEMY);
     enemyBullets[i] = newBullet;
 }
 
@@ -29,7 +29,7 @@ void BulletManager::playerCreateBullet(int8_t x, int8_t y, DIRECTION dir, int8_t
     while(!playerBullets[i].isDead() && i < MAX_PLAYER_BULLETS-1){
         i++;
     }
-    Bullet newBullet(x, y, dir, speed);
+    Bullet newBullet(x, y, dir, speed, SRC_PLAYER);
     playerBullets[i] = newBullet;
 }
 
