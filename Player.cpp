@@ -82,5 +82,5 @@ HitBox Player::getCollisionBox(){
 
 // called when player is hit by bullet
 void Player::hit(){
-    
+    gb.sound.playCancel();
 }
