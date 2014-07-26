@@ -19,8 +19,7 @@ typedef struct {
     int8_t h;
 }HitBox;
     
-#define MAX_PLAYER_BULLETS 25
-#define MAX_ENEMY_BULLETS 70
+#define MAX_BULLETS 100
 #define BULLET_SIZE 3
 #define DIAG_BULLET_SIZE 2
 #define MAX_ENEMIES 10

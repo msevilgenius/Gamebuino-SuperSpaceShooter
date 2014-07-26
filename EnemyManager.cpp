@@ -30,12 +30,10 @@ void EnemyManager::createEnemy(int8_t x, int8_t y, ENEMY_TYPE type){
     while(!enemies[i].isDead() && i < MAX_ENEMIES-1){
         i++;
     }
-    Enemy newEnemy(x, y, type);
-    enemies[i] = newEnemy;
+    enemies[i].init(x, y, type);
     
 }
 
-// this method is here becuase there seems to be something fundamentally wrong with accessing extern arrays using a variable as the index
 bool EnemyManager::TestShot(int8_t x1, int8_t y1, int8_t x2, int8_t y2, int8_t x3, int8_t y3){
     HitBox hb;
     for(uint8_t i = 0; i< MAX_ENEMIES; i++){

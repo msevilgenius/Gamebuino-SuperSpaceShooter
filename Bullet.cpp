@@ -15,7 +15,7 @@ extern Gamebuino gb;
 extern Player player;
 extern EnemyManager enemies;
 
-Bullet::Bullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte source) {
+void Bullet::init(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte source) {
     this->x = x;
     this->y = y;
     this->age = 1;

@@ -15,9 +15,8 @@
 class Enemy {
 public:
     Enemy();
-    Enemy(int8_t x, int8_t y, ENEMY_TYPE type);
-    Enemy(const Enemy& orig);
     virtual ~Enemy();
+    void init(int8_t x, int8_t y, ENEMY_TYPE type);
     void draw();
     void update();
     boolean isDead();

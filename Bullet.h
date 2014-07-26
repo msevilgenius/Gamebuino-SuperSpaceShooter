@@ -14,8 +14,8 @@
 class Bullet {
 public:
     Bullet();
-    Bullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte source); // source = who shot the bullet
     virtual ~Bullet();
+    void init(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte source); // source = who shot the bullet
     void update();
     bool isDead();
 private:

@@ -21,19 +21,13 @@ const byte ENEMY_SPRITE_1[] PROGMEM = {
     B00000001, 
 };
 
-Enemy::Enemy(int8_t x, int8_t y, ENEMY_TYPE type) {
+void Enemy::init(int8_t x, int8_t y, ENEMY_TYPE type) {
     this->x = x;
     this->y = y;
     this->type = type;
 }
 
 Enemy::Enemy() {
-    this->type = DEAD;
-    this->x = 0;
-    this->y = 0;
-}
-
-Enemy::Enemy(const Enemy& orig) {
 }
 
 Enemy::~Enemy() {
@@ -51,9 +45,9 @@ void Enemy::update(){
         return;
     }
     if(gb.frameCount%16==0){
-        bullets.enemyCreateBullet(x, y, DIR_W, 2);
-        bullets.enemyCreateBullet(x, y, DIR_NW, 2);
-        bullets.enemyCreateBullet(x, y, DIR_SW, 2);
+        bullets.createBullet(x, y, DIR_W, 2, SRC_ENEMY);
+        bullets.createBullet(x, y, DIR_NW, 2, SRC_ENEMY);
+        bullets.createBullet(x, y, DIR_SW, 2, SRC_ENEMY);
     }
 }
 

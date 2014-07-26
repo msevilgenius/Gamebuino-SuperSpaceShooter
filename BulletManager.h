@@ -13,13 +13,11 @@
 
 class BulletManager {
 private:
-    Bullet enemyBullets[MAX_ENEMY_BULLETS];
-    Bullet playerBullets[MAX_PLAYER_BULLETS];
+    Bullet bullets[MAX_BULLETS];
 public:
     BulletManager();
     virtual ~BulletManager();
-    void playerCreateBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed);
-    void enemyCreateBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed);
+    void createBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte src);
     void updateAndDraw();
 };
 
