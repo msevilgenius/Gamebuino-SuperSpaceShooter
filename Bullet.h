@@ -33,7 +33,6 @@ private:
     int8_t y;
     int8_t speed;
     DIRECTION direction;
-    uint8_t age;
 };
 
 #endif	/* BULLET_H */

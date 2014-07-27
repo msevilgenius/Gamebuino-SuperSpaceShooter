@@ -18,7 +18,6 @@ extern EnemyManager enemies;
 void Bullet::init(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte source) {
     this->x = x;
     this->y = y;
-    this->age = 1;
     this->direction = dir;
     this->speed = speed;
     this->source = source;
@@ -27,8 +26,7 @@ void Bullet::init(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte source) 
 Bullet::Bullet() {
     this->x = 0;
     this->y = 0;
-    this->age = 0;
-    this->direction = DIR_N;
+    this->direction = NONE;
     this->speed = 0;
     this->source = -1;
 }
@@ -37,23 +35,9 @@ Bullet::~Bullet() {
 }
 
 void Bullet::update(){
-    // Note: age = 0 means that the bullet doesn't 'exist' so it can be overwritten, it's a bit of a hack
-    
-    // bullet doesn't exist so do nothing
-    if(age == 0){
-        return;
-    }
-
-    // increment age
-    age++;
-    // 'destroy' too old bullets
-    if (age > 200){
-        age = 0;
-        return;
-    }
     // 'destroy' bullets off screen
     if(x < 0 || x > LCDWIDTH ||y < 0 || y > LCDHEIGHT){
-        age = 0;
+        direction = NONE;
         return;
     }
     
@@ -89,6 +73,8 @@ void Bullet::update(){
         case DIR_NW:
             updateNW();
             break;
+        case NONE:
+            return;
     }
 }
 
@@ -160,17 +146,17 @@ void Bullet::testCollision(int8_t x1, int8_t y1, int8_t x2, int8_t y2, int8_t x3
                 gb.collidePointRect(x2,y2,hb.x,hb.y,hb.w,hb.h)||
                 gb.collidePointRect(x3,y3,hb.x,hb.y,hb.w,hb.h) ){
             player.hit();
-            age = 0; // make me dead
+            direction = NONE; // make me dead
             return;
         }
     }else if (source == SRC_PLAYER){
         if(enemies.TestShot(x1, y1, x2, y2, x3, y3)){
-            age = 0;
+            direction = NONE;
         }
     }
 }
 
 bool Bullet::isDead(){
-    return(age == 0);
+    return(direction == NONE);
 }
 

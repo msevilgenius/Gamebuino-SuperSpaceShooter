@@ -9,7 +9,7 @@
 #define	GLOBALS_H
 #include <Gamebuino.h>
 
-enum DIRECTION {DIR_N, DIR_NE, DIR_E, DIR_SE, DIR_S, DIR_SW, DIR_W, DIR_NW};
+enum DIRECTION {NONE, DIR_N, DIR_NE, DIR_E, DIR_SE, DIR_S, DIR_SW, DIR_W, DIR_NW};
 enum ENEMY_TYPE {DEAD, BASIC};
 
 typedef struct {
