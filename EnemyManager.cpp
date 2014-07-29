@@ -15,6 +15,14 @@ EnemyManager::EnemyManager() {
 EnemyManager::~EnemyManager() {
 }
 
+void EnemyManager::reset(){
+    for(int8_t i = 0; i < MAX_ENEMIES; i++){
+        if(!enemies[i].isDead()){
+            enemies[i].init(0,0,DEAD);
+        }
+    }
+}
+
 void EnemyManager::update(){
     for(int8_t i = 0; i < MAX_ENEMIES; i++){
         if(!enemies[i].isDead()){

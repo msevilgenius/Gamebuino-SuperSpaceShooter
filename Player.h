@@ -16,6 +16,7 @@ class Player {
 public:
     Player();
     virtual ~Player();
+    void begin();
     void shoot();
     void moveUp();
     void moveDown();
@@ -28,6 +29,7 @@ private:
     int8_t x;
     int8_t y;
     int8_t bullet_speed;
+    int8_t health;
     uint8_t last_bullet_time;
     byte abilities;
 };

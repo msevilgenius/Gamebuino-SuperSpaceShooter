@@ -13,6 +13,14 @@ BulletManager::BulletManager() {
 BulletManager::~BulletManager() {
 }
 
+void BulletManager::reset(){
+    for(int8_t i = 0;i < MAX_BULLETS;i++){
+        if (!bullets[i].isDead()){
+            bullets[i].init(0,0,NONE,0,0);
+        }
+    }
+}
+
 void BulletManager::createBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte src){
     // not terribly efficient way to find an inactive bullet
     // looks through array of bullets until it finds one not in existance, or just the last one in the array

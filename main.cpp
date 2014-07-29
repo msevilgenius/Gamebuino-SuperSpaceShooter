@@ -7,6 +7,8 @@
 
 Gamebuino gb;
 
+extern byte font3x5[];
+
 const byte logo[] PROGMEM = {
     64, 28,
     B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, 
@@ -43,12 +45,22 @@ Player player;
 BulletManager bullets;
 EnemyManager enemies;
 
+uint16_t score;
+
 // button states (whether they are pressed or not)
 bool upbtn = false,
         dnbtn = false,
         lfbtn = false,
         rtbtn = false,
         abtn  = false;
+
+
+void reset(){
+    score = 0;
+    player.begin();
+    bullets.reset();
+    enemies.reset();
+}
 
 /**
  * updates the status of the buttons
@@ -84,11 +96,19 @@ void updateButtons(){
     }
 }
 
+void drawScore(){
+    gb.display.setFont(font3x5);
+    gb.display.cursorX = 1;
+    gb.display.cursorY = 1;
+    gb.display.print(score);
+}
+
 void setup() {
     gb.begin();
     gb.titleScreen(F(" SSS by msevilgenius"), logo);
     gb.pickRandomSeed();
     gb.battery.show = false;
+    reset();
 }
 
 void loop() {
@@ -118,9 +138,16 @@ void loop() {
             enemies.createEnemy(LCDWIDTH+3, random(3, LCDHEIGHT-3), BASIC);
         }
         
+        if(gb.buttons.pressed(BTN_C)){
+            gb.titleScreen(F(" SSS by msevilgenius"), logo);
+            reset();
+        }
+        
+        
         // updating and rendering
         enemies.update();
         bullets.updateAndDraw();
         player.draw();
+        drawScore();
     }
 }

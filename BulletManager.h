@@ -17,6 +17,7 @@ private:
 public:
     BulletManager();
     virtual ~BulletManager();
+    void reset();
     void createBullet(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte src);
     void updateAndDraw();
 };

@@ -9,6 +9,7 @@
 
 extern Gamebuino gb;
 extern BulletManager bullets;
+extern int16_t score;
 
 const byte ENEMY_SPRITE_1[] PROGMEM = {
     7, 7,
@@ -67,4 +68,5 @@ HitBox Enemy::getCollisionBox(){
 
 void Enemy::hit(){
     type = DEAD;
+    score += 10;
 }
