@@ -25,6 +25,10 @@ public:
 private:
     int8_t x;
     int8_t y;
+    void shoot();
+    void move();
+    int8_t shoot_frame;
+    int8_t last_bullet_time;
     ENEMY_TYPE type;
 };
 

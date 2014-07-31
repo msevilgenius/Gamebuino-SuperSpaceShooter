@@ -10,7 +10,7 @@
 #include <Gamebuino.h>
 
 enum DIRECTION {NONE, DIR_N, DIR_NE, DIR_E, DIR_SE, DIR_S, DIR_SW, DIR_W, DIR_NW};
-enum ENEMY_TYPE {DEAD, BASIC};
+enum ENEMY_TYPE {DEAD, BASIC, SPINNER, WEAVER};
 
 typedef struct {
     int8_t x;
