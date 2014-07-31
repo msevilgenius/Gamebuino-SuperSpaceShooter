@@ -135,7 +135,7 @@ void loop() {
         
         //temporary way to create enemies for testing
         if(gb.buttons.pressed(BTN_B)){
-            enemies.createEnemy(LCDWIDTH+3, random(3, LCDHEIGHT-3), BASIC);
+            enemies.createEnemy(LCDWIDTH+3, random(3, LCDHEIGHT-3), static_cast<ENEMY_TYPE>(random(3)+1));
         }
         
         if(gb.buttons.pressed(BTN_C)){
