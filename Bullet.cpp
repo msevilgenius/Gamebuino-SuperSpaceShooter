@@ -89,7 +89,7 @@ void Bullet::updateNE(){
         y -= speed;
         x += speed;
     }
-    gb.display.drawLine(x, y, x+DIAG_BULLET_SIZE, y+DIAG_BULLET_SIZE);
+    gb.display.drawLine(x, y, x+DIAG_BULLET_SIZE, y-DIAG_BULLET_SIZE);
     testCollision(x,y,x+1,y-1,x+2,y-2);
 }
 
@@ -104,7 +104,7 @@ void Bullet::updateSE(){
         y += speed;
         x += speed;
     }
-    gb.display.drawLine(x, y, x+DIAG_BULLET_SIZE, y-DIAG_BULLET_SIZE);
+    gb.display.drawLine(x, y, x+DIAG_BULLET_SIZE, y+DIAG_BULLET_SIZE);
     testCollision(x,y,x+1,y+1,x+2,y+2);
 }
 
