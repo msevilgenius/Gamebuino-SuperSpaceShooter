@@ -1,12 +1,10 @@
 Proper enemy spawning.
-Score.
 More enemy types.
-	- It would be nice to have a system where each enemy type's move and shoot sequences were stored in the ROM and the enemy class just read the relevant data and performed the relevant actions.
-Make it pause-able.
+Explosion animations
 Variable difficulty (bullet hell mode?).
 	AND/OR:
 Multiple 'pre-determined' levels (enemies are always in the same pattern in each specific level).
-	-this could be achieved by using the same random seed each time a particular level is played.
+	-this could be achieved by using the same random seed each time a particular level is played or programmed levels using a similar system to the enemy types one
 Power-ups and abilities? e.g shield, more bullets in multiple directions, etc.
 Better system for finding empty space in array for new enemies and bullets.
 Music and sounds.
