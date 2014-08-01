@@ -16,7 +16,7 @@ BulletManager::~BulletManager() {
 void BulletManager::reset(){
     for(int8_t i = 0;i < MAX_BULLETS;i++){
         if (!bullets[i].isDead()){
-            bullets[i].init(0,0,NONE,0,0);
+            bullets[i].init(0,0,D_NONE,0,0);
         }
     }
 }

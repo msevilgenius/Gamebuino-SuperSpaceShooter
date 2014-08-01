@@ -8,9 +8,11 @@
 #include "Enemy.h"
 #include <avr/pgmspace.h>
 #include "enemyTypes.h"
+#include "EffectsManager.h"
 
 extern Gamebuino gb;
 extern BulletManager bullets;
+extern EffectsManager effectsManager;
 extern int16_t score;
 extern const byte *enemy_types[];
 
@@ -60,6 +62,7 @@ HitBox Enemy::getCollisionBox(){
 void Enemy::hit(){
     type = DEAD;
     score += 10;
+    effectsManager.createEffect(EXPLOSION_LARGE, x, y);
 }
 
 void Enemy::move(){
@@ -78,7 +81,7 @@ void Enemy::shoot(){
         return;
     }
     
-    byte directions = (byte)pgm_read_word(&(ref[(shoot_frame*2+1)])) ;
+    byte directions = (byte)pgm_read_byte(&(ref[(shoot_frame*2+1)])) ;
     if(directions & 0b10000000){
         bullets.createBullet(x, y, DIR_NW, 2, SRC_ENEMY);
     }

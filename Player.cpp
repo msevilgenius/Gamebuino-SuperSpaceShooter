@@ -6,9 +6,11 @@
  */
 
 #include "Player.h"
+#include "EffectsManager.h"
 
 extern Gamebuino gb;
 extern BulletManager bullets;
+extern EffectsManager effectsManager;
 extern void reset();
 
 const byte SHIP_SPRITE[] PROGMEM = {

@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "EnemyManager.h"
 #include "BulletManager.h"
+#include "EffectsManager.h"
 #include "globals.h"
 
 Gamebuino gb;
@@ -44,6 +45,7 @@ const byte logo[] PROGMEM = {
 Player player;
 BulletManager bullets;
 EnemyManager enemies;
+EffectsManager effectsManager;
 
 uint16_t score;
 
@@ -60,6 +62,7 @@ void reset(){
     player.begin();
     bullets.reset();
     enemies.reset();
+    effectsManager.init();
 }
 
 /**
@@ -147,6 +150,7 @@ void loop() {
         // updating and rendering
         enemies.update();
         bullets.updateAndDraw();
+        effectsManager.update();
         player.draw();
         drawScore();
     }

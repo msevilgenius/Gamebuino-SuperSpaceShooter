@@ -9,8 +9,9 @@
 #define	GLOBALS_H
 #include <Gamebuino.h>
 
-enum DIRECTION {NONE, DIR_N, DIR_NE, DIR_E, DIR_SE, DIR_S, DIR_SW, DIR_W, DIR_NW};
+enum DIRECTION {D_NONE, DIR_N, DIR_NE, DIR_E, DIR_SE, DIR_S, DIR_SW, DIR_W, DIR_NW};
 enum ENEMY_TYPE {DEAD, BASIC, SPINNER, WEAVER};
+enum EFFECT_TYPE {E_NONE, EXPLOSION_SMALL, EXPLOSION_LARGE, FLASH};
 
 typedef struct {
     int8_t x;
@@ -19,7 +20,7 @@ typedef struct {
     int8_t h;
 }HitBox;
     
-#define MAX_BULLETS 100
+#define MAX_BULLETS 64
 #define BULLET_SIZE 3
 #define DIAG_BULLET_SIZE 2
 #define MAX_ENEMIES 10

@@ -9,11 +9,13 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "EnemyManager.h"
+#include "EffectsManager.h"
 #include <Gamebuino.h>
 
 extern Gamebuino gb;
 extern Player player;
 extern EnemyManager enemies;
+extern EffectsManager effectsManager;
 
 void Bullet::init(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte source) {
     this->x = x;
@@ -26,7 +28,7 @@ void Bullet::init(int8_t x, int8_t y, DIRECTION dir, int8_t speed, byte source) 
 Bullet::Bullet() {
     this->x = 0;
     this->y = 0;
-    this->direction = NONE;
+    this->direction = D_NONE;
     this->speed = 0;
     this->source = -1;
 }
@@ -37,7 +39,7 @@ Bullet::~Bullet() {
 void Bullet::update(){
     // 'destroy' bullets off screen
     if(x < 0 || x > LCDWIDTH ||y < 0 || y > LCDHEIGHT){
-        direction = NONE;
+        direction = D_NONE;
         return;
     }
     
@@ -73,7 +75,7 @@ void Bullet::update(){
         case DIR_NW:
             updateNW();
             break;
-        case NONE:
+        case D_NONE:
             return;
     }
 }
@@ -146,17 +148,19 @@ void Bullet::testCollision(int8_t x1, int8_t y1, int8_t x2, int8_t y2, int8_t x3
                 gb.collidePointRect(x2,y2,hb.x,hb.y,hb.w,hb.h)||
                 gb.collidePointRect(x3,y3,hb.x,hb.y,hb.w,hb.h) ){
             player.hit();
-            direction = NONE; // make me dead
+            direction = D_NONE; // make me dead
+            effectsManager.createEffect(EXPLOSION_SMALL,x,y);
             return;
         }
     }else if (source == SRC_PLAYER){
         if(enemies.TestShot(x1, y1, x2, y2, x3, y3)){
-            direction = NONE;
+            direction = D_NONE;
+            effectsManager.createEffect(EXPLOSION_SMALL,x,y);
         }
     }
 }
 
 bool Bullet::isDead(){
-    return(direction == NONE);
+    return(direction == D_NONE);
 }
 
