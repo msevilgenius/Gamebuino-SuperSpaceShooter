@@ -84,21 +84,30 @@ void Bullet::update(){
 void Bullet::updateN(){
     y -= speed;
     gb.display.drawFastVLine(x, y, BULLET_SIZE);
-    testCollision(x,y,x-1,y,x,y-2);
+    if(source == SRC_PLAYER){
+        gb.display.drawLine(x - 1, y + BULLET_SIZE - 1, x+1, y + BULLET_SIZE - 1);
+    }
+    testCollision(x,y,x,y+1,x,y+2);
 }
 void Bullet::updateNE(){
     if(gb.frameCount%3){//twice every 3 frames
         y -= speed;
         x += speed;
     }
-    gb.display.drawLine(x, y, x+DIAG_BULLET_SIZE, y-DIAG_BULLET_SIZE);
-    testCollision(x,y,x+1,y-1,x+2,y-2);
+    gb.display.drawLine(x, y, x-DIAG_BULLET_SIZE, y+DIAG_BULLET_SIZE);
+    if(source == SRC_PLAYER){
+        gb.display.drawLine(x - BULLET_SIZE, y + 1, x - 1, y + BULLET_SIZE);
+    }
+    testCollision(x,y,x-1,y+1,x-2,y+2);
 }
 
 void Bullet::updateE(){
     x += speed;
-    gb.display.drawFastHLine(x, y, BULLET_SIZE);
-    testCollision(x,y,x+1,y,x+2,y);
+    gb.display.drawFastHLine(x - (BULLET_SIZE - 1), y, BULLET_SIZE);
+    if(source == SRC_PLAYER){
+        gb.display.drawLine(x - (BULLET_SIZE - 1), y - 1, x - (BULLET_SIZE - 1), y + 1);
+    }
+    testCollision(x,y,x-1,y,x-2,y);
 }
 
 void Bullet::updateSE(){
@@ -106,14 +115,20 @@ void Bullet::updateSE(){
         y += speed;
         x += speed;
     }
-    gb.display.drawLine(x, y, x+DIAG_BULLET_SIZE, y+DIAG_BULLET_SIZE);
-    testCollision(x,y,x+1,y+1,x+2,y+2);
+    gb.display.drawLine(x, y, x-DIAG_BULLET_SIZE, y-DIAG_BULLET_SIZE);
+    if(source == SRC_PLAYER){
+        gb.display.drawLine(x - BULLET_SIZE, y - 1, x - 1, y - BULLET_SIZE);
+    }
+    testCollision(x,y,x-1,y-1,x-2,y-2);
 }
 
 void Bullet::updateS(){
     y += speed;
-    gb.display.drawFastVLine(x, y-BULLET_SIZE, BULLET_SIZE);
-    testCollision(x,y,x,y+1,x,y+2);
+    gb.display.drawFastVLine(x, y - (BULLET_SIZE - 1), BULLET_SIZE);
+    if(source == SRC_PLAYER){
+        gb.display.drawLine(x - 1, y - (BULLET_SIZE - 1), x + 1, y - (BULLET_SIZE - 1));
+    }
+    testCollision(x,y,x,y-1,x,y-2);
 }
 
 void Bullet::updateSW(){
@@ -121,13 +136,19 @@ void Bullet::updateSW(){
         y += speed;
         x -= speed;
     }
-    gb.display.drawLine(x, y, x-DIAG_BULLET_SIZE, y+DIAG_BULLET_SIZE);
-    testCollision(x,y,x-1,y+1,x-2,y+2);
+    gb.display.drawLine(x, y, x+DIAG_BULLET_SIZE, y-DIAG_BULLET_SIZE);
+    if(source == SRC_PLAYER){
+        gb.display.drawLine(x + BULLET_SIZE, y - 1, x + 1, y - BULLET_SIZE);
+    }
+    testCollision(x,y,x+1,y-1,x+2,y-2);
 }
 
 void Bullet::updateW(){
     x -= speed;
-    gb.display.drawFastHLine(x-BULLET_SIZE, y, BULLET_SIZE);
+    gb.display.drawFastHLine(x, y, BULLET_SIZE);
+    if(source == SRC_PLAYER){
+        gb.display.drawLine(x + BULLET_SIZE - 1, y - 1, x + BULLET_SIZE - 1, y + 1);
+    }
     testCollision(x,y,x-1,y,x-2,y);
 }
 
@@ -136,8 +157,11 @@ void Bullet::updateNW(){
         y -= speed;
         x -= speed;
     }
-    gb.display.drawLine(x, y, x-DIAG_BULLET_SIZE, y-DIAG_BULLET_SIZE);
-    testCollision(x,y,x-1,y-1,x-2,y-2);
+    gb.display.drawLine(x, y, x+DIAG_BULLET_SIZE, y+DIAG_BULLET_SIZE);
+    if(source == SRC_PLAYER){
+        gb.display.drawLine(x + BULLET_SIZE, y + 1, x + 1, y + BULLET_SIZE);
+    }
+    testCollision(x,y,x+1,y+1,x+2,y+2);
 }
 
 void Bullet::testCollision(int8_t x1, int8_t y1, int8_t x2, int8_t y2, int8_t x3, int8_t y3){// co-ords of pixels of bullet
