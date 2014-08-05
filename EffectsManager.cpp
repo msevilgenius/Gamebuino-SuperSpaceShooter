@@ -138,6 +138,8 @@ void EffectsManager::update(){
                 // draw the frame with random flip and rotaion - we don't want every one to look exactly the same!
                 gb.display.drawBitmap(
                     effects[i].x - 2, effects[i].y - 2, smallExplosion[effects[i].age], random(4), random(4));
+                // make explosions move with background
+                effects[i].x -= (gb.frameCount % 2);
                 break;
             case EXPLOSION_LARGE:
                 if(effects[i].age > 3){
@@ -146,6 +148,8 @@ void EffectsManager::update(){
                 }
                 gb.display.drawBitmap(
                     effects[i].x - 3, effects[i].y - 3, largeExplosion[effects[i].age], random(4), random(4));
+                // make explosions move with background
+                effects[i].x -= (gb.frameCount % 2);
                 break;
             
             // fallthrough
