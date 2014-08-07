@@ -1,6 +1,5 @@
 Proper enemy spawning.
 More enemy types.
-Explosion animations
 Variable difficulty (bullet hell mode?).
 	AND/OR:
 Multiple 'pre-determined' levels (enemies are always in the same pattern in each specific level).
